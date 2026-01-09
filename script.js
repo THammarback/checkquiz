@@ -20,6 +20,9 @@ function renderQuiz() {
         const questionText = document.createElement('div');
         questionText.className = 'question-text';
         questionText.textContent = q.question;
+        if(!q.hiddenAmount){
+            questionText.textContent += `(${q.answers.reduce((acc, {correct})=>acc+correct,0)} förväntade svar)`
+        }
 
         questionHeader.appendChild(questionText);
 
