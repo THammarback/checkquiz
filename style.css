@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.question {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.question.correct {
+    background: #d1fae5;
+    border: 2px solid #10b981;
+}
+
+.question.incorrect {
+    background: #fee2e2;
+    border: 2px solid #ef4444;
+}
+
+.question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.question-text {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.feedback-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.question.correct .feedback-icon.check {
+    display: block;
+}
+
+.question.incorrect .feedback-icon.cross {
+    display: block;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.answer:hover {
+    background: #e9ecef;
+}
+
+.answer.correct-answer {
+    background: #d1fae5;
+    border-color: #10b981;
+}
+
+.answer.wrong-answer {
+    background: #fee2e2;
+    border-color: #ef4444;
+}
+
+.answer input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.answer label {
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.answer-indicator {
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.answer.correct-answer .answer-indicator.correct-label,
+.answer.wrong-answer .answer-indicator.wrong-label {
+    display: inline;
+}
+
+.answer-indicator.correct-label {
+    color: #10b981;
+}
+
+.answer-indicator.wrong-label {
+    color: #ef4444;
+}
+
+.check-button {
+    width: 100%;
+    padding: 1rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 1rem;
+}
+
+.check-button:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.check-button:active {
+    transform: translateY(0);
+}
+
+.results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    text-align: center;
+    display: none;
+}
+
+.results.show {
+    display: block;
+}
+
+.results h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #667eea;
+}
