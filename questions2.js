@@ -112,7 +112,7 @@ const questions = [
     ]
   },
   {
-    "question": "Vad menas med progression? (3 rätta svar)",
+    "question": "Vad menas med progression?",
     "answers": [
       { "text": "att undervisningen bygger på tidigare lärande och leder till ökad svårighetsgrad över tid.", "correct": false },
       { "text": "att eleverna först arbetar med teoretiskt material...", "correct": false },
@@ -123,7 +123,7 @@ const questions = [
     ]
   },
   {
-    "question": "Vilka tre kognitiva färdigheter kan barnet förväntas klara av i det konkret-operationella stadiet? (3 rätta svar)",
+    "question": "Vilka tre kognitiva färdigheter kan barnet förväntas klara av i det konkret-operationella stadiet?",
     "answers": [
       { "text": "Att förstå konservering av mängd.", "correct": true },
       { "text": "Att utföra hypotetiska resonemang om abstrakta problem.", "correct": false },
@@ -135,7 +135,7 @@ const questions = [
     ]
   },
   {
-    "question": "Vilka två alternativ visar på hur lärarens roll betraktas i experimentsituationer ur ett sociokulturellt perspektiv? (2 rätta svar)",
+    "question": "Vilka två alternativ visar på hur lärarens roll betraktas i experimentsituationer ur ett sociokulturellt perspektiv?",
     "answers": [
       { "text": "Läraren betraktas främst som en övervakare.", "correct": false },
       { "text": "Lärarens stödjande roll betonas och den gradvisa processen tillsammans med eleven.", "correct": true },
@@ -146,7 +146,7 @@ const questions = [
     ]
   },
   {
-    "question": "Vilka två skäl anförs ofta till varför behaviorismen representerar en vetenskapligt alltför snäv syn på lärande? (2 rätta svar)",
+    "question": "Vilka två skäl anförs ofta till varför behaviorismen representerar en vetenskapligt alltför snäv syn på lärande?",
     "answers": [
       { "text": "Att man behöver ta hänsyn till den fysiska omgivningen.", "correct": false },
       { "text": "Att behaviorismen betraktar kunskaper som förprogrammerade.", "correct": false },
@@ -157,7 +157,7 @@ const questions = [
     ]
   },
   {
-    "question": "Vilka två påståenden beskriver appropriering och assimilering ur ett sociokulturellt perspektiv? (2 rätta svar)",
+    "question": "Vilka två påståenden beskriver appropriering och assimilering ur ett sociokulturellt perspektiv?",
     "answers": [
       { "text": "Appropriering innebär att en individ aktivt tar till sig och omformar kunskap från sin omgivning för att göra den till sin egen.", "correct": true },
       { "text": "Appropriering sker enbart genom imitation av andra människor.", "correct": false },
@@ -176,7 +176,8 @@ const questions = [
       { "text": "Kunna använda", "correct": false },
       { "text": "Kunna jämföra olika företeelser", "correct": false },
       { "text": "Kunna argumentera", "correct": false }
-    ]
+    ],
+    hiddenAmount: true
   },
   {
     "question": "Lindström och Pennlert har beskrivit tre områden i lärares yrkeskunnande. Vilka av följande är exempel på didaktisk kompetens?",
@@ -188,7 +189,8 @@ const questions = [
       { "text": "Visa flexibilitet i mötet med individer och grupper", "correct": false },
       { "text": "Reflektera över sig själv som social och pedagogisk ledare", "correct": false },
       { "text": "Formulera uppgifter som elever förstår", "correct": true }
-    ]
+    ],
+    hiddenAmount: true
   },
   {
     "question": "Vilket eller vilka perspektiv på lärande passar in på följande påstående: 'Vårt tänkande och vår hjärna är inte en avgränsad del från den värld som vi agerar i, utan lärande sker i samspel med andra människor.'",
@@ -199,7 +201,8 @@ const questions = [
       { "text": "Pragmatismens syn på lärande", "correct": true },
       { "text": "Situerat perspektiv på lärande", "correct": false },
       { "text": "Positivistiskt perspektiv på lärande", "correct": false }
-    ]
+    ],
+    hiddenAmount: true
   },
   {
     "question": "Vilken eller vilka av nedanstående idéer inom skola och utbildning stämmer överens med Deweys syn på kunskap och bildning?",
@@ -211,7 +214,8 @@ const questions = [
       { "text": "Lärande sker genom strukturerad klassrumsundervisning...", "correct": false },
       { "text": "Skolan ska fungera som en demokratisk miljö där elever lär sig genom att delta i samarbete.", "correct": true },
       { "text": "Elever ska inte bara lära sig för att klara av tester...", "correct": false }
-    ]
+    ],
+    hiddenAmount: true
   },
   {
     "question": "Vilket eller vilka av nedanstående alternativ är exempel på 'kommunikativa stöttor' enligt Vygotskijs sociokulturella perspektiv på lärande?",
@@ -222,7 +226,8 @@ const questions = [
       { "text": "Konkreta erfarenheter som möjliggör elevers egen konstruktion av kunskap.", "correct": false },
       { "text": "Hjälp med att dela upp en uppgift i flera steg eller frågor som guidar eleven.", "correct": true },
       { "text": "Återkoppling som visar på både styrkor och utvecklingsområden.", "correct": false }
-    ]
+    ],
+    hiddenAmount: true
   },
   {
     "question": "Vilket/vilka av följande påståenden förklarar att vi kan minnas mer om vi både lyssnar och tittar på ny information?",
@@ -233,6 +238,7 @@ const questions = [
       { "text": "Informationsöverflöde stimulerar hjärnan att lagra fler detaljer.", "correct": false },
       { "text": "Multimodal presentation av information ökar hjärnans kognitiva belastning.", "correct": false },
       { "text": "Arbetsminnet har en större kapacitet än långtidsminnet.", "correct": false }
-    ]
+    ],
+    hiddenAmount: true
   }
 ]
