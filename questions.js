@@ -29,8 +29,8 @@ const questions = [
         answers: [
             { text: `Det är ett betygskriterium omvandlat till syfte.`, correct: false },
             { text: `Det är ett centralt innehåll och en metod.`, correct: false },
-            { text: `Det ar ett innehall och nagot elevens ska kunna gora med innehallet, till exempel sammanfatta, använda eller beskriva.`, correct: true },
-            { text: `Det är ett innehall och en formativ kontrollstation, till exempel ordforstaelsetest, diagnoser eller kunskapsquiz.`, correct: false },
+            { text: `Det är ett innehåll och något elevens ska kunna göra med innehållet, till exempel sammanfatta, använda eller beskriva.`, correct: true },
+            { text: `Det är ett innehåll och en formativ kontrollstation, till exempel ordforståelsetest, diagnoser eller kunskapsquiz.`, correct: false },
             { text: `Det är en metod och uppgifter kopplade till betygskriterier.`, correct: false },
         ]
     },
