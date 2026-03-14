@@ -1,4 +1,4 @@
-const questions = [
+const q1 = [
     {
         question: `I betänkandet "Skola for bildning" beskrevs fyra olika kunskapsformer. De är: Fakta, Förståelse, Fördjupning och Färdighet.`,
         answers: [

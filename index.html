@@ -5,13 +5,18 @@
     <title>Checkbox quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <script src="questions.js" defer></script> -->
-    <script src="questions2.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="q1.js"></script>
+    <script src="q2.js"></script>
+    <script src="q3.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
         <button onclick="shuffleOrder(document.getElementById('questionsContainer'))">Blanda ordningen</button>
+        <button type="button" onclick="toggleTheme()">🌓 Toggle Theme</button>
+        <button onclick="changeQuiz('q1')">25-03-26</button>
+        <button onclick="changeQuiz('q2')">25-06-03</button>
+        <button onclick="changeQuiz('q3')">26-01-12</button>
         <form id="quizForm">
             <div id="questionsContainer"></div>
             <button type="button" class="check-button" onclick="checkAnswers()">Check Answers</button>

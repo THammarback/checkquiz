@@ -1,5 +1,18 @@
+let currentQuestions = [];
 
-function shuffleOrder(container){
+const quizes = { q1, q2, q3 };
+
+function changeQuiz(name) {
+    currentQuestions = quizes[name];
+    renderQuiz();
+    document.getElementById('results').classList.remove('show');
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+}
+
+function shuffleOrder(container) {
     for (let i = container.children.length; i >= 0; i--) {
         container.appendChild(container.children[Math.random() * i | 0]);
     }
@@ -7,120 +20,105 @@ function shuffleOrder(container){
 
 function renderQuiz() {
     const container = document.getElementById('questionsContainer');
-    container.innerHTML = '';
+    
+    container.innerHTML = currentQuestions.map((q, qIndex) => {
+        const isTextInput = 'plainInput' in q;
+        const expectedCount = !isTextInput && !q.hiddenAmount 
+            ? `(${q.answers.filter(a => a.correct).length} förväntade svar)` 
+            : '';
 
-    questions.forEach((q, qIndex) => {
-        const questionDiv = document.createElement('div');
-        questionDiv.className = 'question';
-        questionDiv.id = `question-${qIndex}`;
+        return `
+            <div class="question" id="question-${qIndex}" data-type="${isTextInput ? 'text' : 'choice'}">
+                <div class="question-header">
+                    <div class="question-text">${q.question} ${expectedCount}</div>
+                </div>
+                <span class="feedback-icon check">✓</span>
+                <span class="feedback-icon cross">✗</span>
+                
+                <div class="answers">
+                    ${isTextInput ? renderTextInput(q, qIndex) : renderChoices(q, qIndex)}
+                </div>
+            </div>
+        `;
+    }).join('');
 
-        const questionHeader = document.createElement('div');
-        questionHeader.className = 'question-header';
-
-        const questionText = document.createElement('div');
-        questionText.className = 'question-text';
-        questionText.textContent = q.question;
-        if(!q.hiddenAmount){
-            questionText.textContent += `(${q.answers.reduce((acc, {correct})=>acc+correct,0)} förväntade svar)`
-        }
-
-        questionHeader.appendChild(questionText);
-
-        const checkIcon = document.createElement('span');
-        checkIcon.className = 'feedback-icon check';
-        checkIcon.textContent = '✓';
-        checkIcon.style.color = '#10b981';
-
-        const crossIcon = document.createElement('span');
-        crossIcon.className = 'feedback-icon cross';
-        crossIcon.textContent = '✗';
-        crossIcon.style.color = '#ef4444';
-
-        const answersDiv = document.createElement('div');
-        answersDiv.className = 'answers';
-
-        q.answers.forEach((a, aIndex) => {
-            const answerDiv = document.createElement('div');
-            answerDiv.className = 'answer';
-            answerDiv.dataset.correct = a.correct;
-
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = `q${qIndex}a${aIndex}`;
-            checkbox.name = `question${qIndex}`;
-            checkbox.value = aIndex;
-
-            const label = document.createElement('label');
-            label.htmlFor = `q${qIndex}a${aIndex}`;
-
-            const textSpan = document.createElement('span');
-            textSpan.textContent = a.text;
-
-            const correctIndicator = document.createElement('span');
-            correctIndicator.className = 'answer-indicator correct-label';
-
-            const wrongIndicator = document.createElement('span');
-            wrongIndicator.className = 'answer-indicator wrong-label';
-
-            label.appendChild(textSpan);
-            label.appendChild(correctIndicator);
-            label.appendChild(wrongIndicator);
-
-            answerDiv.appendChild(checkbox);
-            answerDiv.appendChild(label);
-            answersDiv.appendChild(answerDiv);
-        });
-
-        shuffleOrder(answersDiv)
-
-        questionDiv.appendChild(questionHeader);
-        questionDiv.appendChild(checkIcon);
-        questionDiv.appendChild(crossIcon);
-        questionDiv.appendChild(answersDiv);
-        container.appendChild(questionDiv);
-    });
+    // Shuffle each answer group if they are choices
+    document.querySelectorAll('.answers').forEach(shuffleOrder);
 }
 
+function renderChoices(q, qIndex) {
+    return q.answers.map((a, aIndex) => `
+        <div class="answer" data-correct="${a.correct}">
+            <input type="checkbox" id="q${qIndex}a${aIndex}" name="question${qIndex}" value="${aIndex}">
+            <label for="q${qIndex}a${aIndex}">
+                <span>${a.text}</span>
+                <span class="answer-indicator correct-label"> (Rätt)</span>
+                <span class="answer-indicator wrong-label"> (Fel)</span>
+            </label>
+        </div>
+    `).join('');
+}
+
+function renderTextInput(q, qIndex) {
+    return `
+        <div class="answer">
+            <input type="text" id="q${qIndex}plainInput" name="question${qIndex}" placeholder="Skriv ditt svar här...">
+            <label>
+                <span class="answer-indicator correct-label">Rätt!</span>
+                <span class="answer-indicator wrong-label">Fel. Rätt svar: ${q.plainInput}</span>
+            </label>
+        </div>
+    `;
+}
 function checkAnswers() {
     let correctCount = 0;
 
-    questions.forEach((q, qIndex) => {
+    currentQuestions.forEach((q, qIndex) => {
         const questionDiv = document.getElementById(`question-${qIndex}`);
         const answerDivs = questionDiv.querySelectorAll('.answer');
-        const checkboxes = document.querySelectorAll(`input[name="question${qIndex}"]`);
-
-        const selectedAnswers = Array.from(checkboxes)
-            .map((cb, idx) => cb.checked ? idx : -1)
-            .filter(idx => idx !== -1);
-
-        const correctAnswers = [];
-        answerDivs.forEach((answerDiv, idx) => {
-            const isCorrect = answerDiv.dataset.correct === 'true';
-            const isSelected = checkboxes[idx].checked;
-
-            if (isCorrect) {
-                correctAnswers.push(idx);
-                answerDiv.classList.add('correct-answer');
-            } else if (isSelected) {
-                answerDiv.classList.add('wrong-answer');
-            }
-        });
-
-        const isQuestionCorrect = selectedAnswers.length === correctAnswers.length &&
-            selectedAnswers.every(idx => correctAnswers.includes(idx));
+        let isQuestionCorrect = true;
 
         questionDiv.classList.remove('correct', 'incorrect');
-        questionDiv.classList.add(isQuestionCorrect ? 'correct' : 'incorrect');
+        answerDivs.forEach(div => div.classList.remove('correct-answer', 'wrong-answer'));
 
+        if (questionDiv.dataset.type === 'text') {
+            const input = questionDiv.querySelector('input[type="text"]');
+            isQuestionCorrect = input.value.trim().toLowerCase() === q.plainInput.toLowerCase();
+            if (isQuestionCorrect) {
+                answerDivs[0].classList.add('correct-answer');
+            } else {
+                answerDivs[0].classList.add('wrong-answer');
+            }
+        } else {
+            const checkboxes = questionDiv.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach((cb, idx) => {
+                const isChecked = cb.checked;
+                const isActuallyCorrect = q.answers[idx].correct;
+
+                if (isActuallyCorrect) {
+                    answerDivs[idx].classList.add('correct-answer');
+                }
+                if (isChecked && !isActuallyCorrect) {
+                    answerDivs[idx].classList.add('wrong-answer');
+                }
+                if (isChecked !== isActuallyCorrect) {
+                    isQuestionCorrect = false;
+                }
+            });
+        }
+
+        questionDiv.classList.add(isQuestionCorrect ? 'correct' : 'incorrect');
         if (isQuestionCorrect) correctCount++;
     });
 
-    const resultsDiv = document.getElementById('results');
-    const scoreDiv = document.getElementById('score');
-    scoreDiv.textContent = `${correctCount} / ${questions.length}`;
-    resultsDiv.classList.add('show');
+    document.getElementById('score').textContent = `${correctCount} / ${currentQuestions.length}`;
+    document.getElementById('results').classList.add('show');
+}   
 
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+window.onload = () => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-theme');
+    }
+    changeQuiz('q1');
 }
-
-renderQuiz();

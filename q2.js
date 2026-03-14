@@ -1,4 +1,4 @@
-const questions = [
+const q2 = [
   {
     "question": "Skollagen definierar begreppet utbildning på följande sätt: \"Den verksamhet inom vilken undervisning sker utifrån bestämda mål.\" Är det sant eller falskt?",
     "answers": [
