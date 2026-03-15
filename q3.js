@@ -23,7 +23,7 @@ const q3 = [
     ]
   },
   {
-    "question": "Vilka två av följande alternativ är exempel på didaktisk kompetens?",
+    "question": "En lärare behöver flera olika kompetenser varav didaktisk kompetens är en av dem. Vilka två av följande alternativ är exempel på didaktisk kompetens? ",
     "answers": [
       { "text": "Att läraren kan problematisera och strukturerar ett innehåll", "correct": true },
       { "text": "Att läraren kan välja lämpliga metoder för bearbetning av olika innehåll och motivera dessa val.", "correct": true },
@@ -35,7 +35,7 @@ const q3 = [
     ]
   },
   {
-    "question": "Vad omfattar didaktisk kompetens?",
+    "question": "För att nå en yrkesskicklighet som lärare krävs det att man har didaktiska kunskaper (dvs. både teoretisk och praktisk kunskap om relationen mellan undervisning och lärande). Vad omfattar didaktisk kompetens? ",
     "answers": [
       { "text": "Didaktisk kompetens omfattar kunskap om att undervisa", "correct": true },
       { "text": "Didaktisk kompetens omfattar kunskap om sociala relationer", "correct": false },
@@ -71,32 +71,41 @@ const q3 = [
     ]
   },
   {
-    "question": "Ge exempel på två lösningar för hur eleven ska kunna utvecklas och möta dessa nya krav enligt Dewey?",
+    "question": "Kunskapsexplosionen, den snabba tekniska utvecklingen och det demokratiska samhället ställer annorlunda krav på nutida samhällsmedborgare jämfört med tidigare generationer. Ge exempel på två lösningar för hur eleven ska kunna utvecklas och möta dessa nya krav enligt Dewey?",
     "answers": [
       { "text": "Genom intermittent förstärkning motiveras elever till att utforska sin omvärld och få lust till det livslånga lärandet.", "correct": false },
       { "text": "Genom undervisningen ska eleven försättas i sin proximala utvecklingszon för att motiveras i sitt eget lärande.", "correct": false },
-      { "text": "Eleven bör ställas inför utmaningar när de undersöker världen och försättas i kognitiv konflikt för att ackommodera och utveckla nya tankemönster.", "correct": true },
-      { "text": "Eleven ska lära känna de processer som resulterar i kunskap genom ett undersökande arbetssätt.", "correct": true },
-      { "text": "Eleven ska utveckla förmågan att tänka kritiskt och reflektera över sina egna erfarenheter för att kunna delta aktivt i ett demokratiskt samhälle.", "correct": false },
+      { "text": "Eleven bör ställas inför utmaningar när de undersöker världen och försättas i kognitiv konflikt för att ackommodera och utveckla nya tankemönster.", "correct": false },
+      { "text": "Eleven ska lära känna de processer som resulterar i kunskap genom ett undersökande arbetssätt, till exempel genom att definiera begrepp, formulera hypoteser, pröva den mot empiriska observationer o.s.v.", "correct": true },
+      { "text": "Eleven ska utveckla förmågan att tänka kritiskt och reflektera över sina egna erfarenheter för att kunna delta aktivt i ett demokratiskt samhälle.", "correct": true },
       { "text": "Genom att utveckla elevers digitala kompetens och förmågan att använda digitala artefakter kommer de att kunna processa och lagra mer information", "correct": false },
       { "text": "Eleven ska ges möjlighet att lära sig mer genom ökad undervisningstid och en obligatorisk grundskola.", "correct": false }
     ]
   },
   {
-    "question": "Vilka två av nedanstående alternativ beskriver elevers kunskapsutveckling utifrån ett sociokulturellt perspektiv?",
+    "question": "Vilka två av nedanstående alternativ beskriver elevers kunskapsutveckling utifrån ett sociokulturellt perspektiv? ",
     "answers": [
-      { "text": "Eleven utvecklar kunskap genom att använda språket och andra kulturella redskap i samspel med andra.", "correct": true },
-      { "text": "Eleverna får lära sig teoretiska begrepp och procedurer som sedan tillämpas på en konkret, praktisk situation.", "correct": false },
-      { "text": "Eleverna tillägnar sig därigenom lärarens kunskaper, om dessa förklaras på elevernas nivå.", "correct": false },
-      { "text": "Eleverna får arbeta i olika sociala situationer som de kan anses klara av, i sitt nuvarande utvecklingsstadium.", "correct": false },
-      { "text": "Utifrån sin didaktiska kompetens väljer läraren uppgifter som anpassas till vad alla elever kan klara av med stöttning av sina kamrater.", "correct": false },
-      { "text": "Eleven ges möjlighet att arbeta med sådant de ännu inte kan, tillsammans med andra som är mer kunniga.", "correct": true },
-      { "text": "Eleven lånar kompetens av sina kompisar och stöttas av lärare.", "correct": false },
-      { "text": "Eleven får använda olika redskap och utveckla färdighet.", "correct": false }
+      {"text": "Eleven utvecklar kunskap genom att använda språket och andra kulturella redskap i samspel med andra, vilket gör att tänkandet formas av den sociala och kulturella kontexten.", "correct": true},
+      {"text": "Eleverna får lära sig teoretiska begrepp och procedurer som sedan tillämpas på en konkret, praktisk situation såsom problemlösning. Eleverna tillägnar sig därigenom lärarens kunskaper, om dessa förklaras på elevernas nivå.", "correct": false},
+      {"text": "Eleverna får arbeta i olika sociala situationer som de kan anses klara av, i sitt nuvarande utvecklingsstadium. Utifrån sin didaktiska kompetens väljer läraren uppgifter som anpassas till vad alla elever kan klara av med stöttning av sina kamrater.", "correct": false},
+      {"text": "Eleven ges möjlighet att arbeta med sådant de ännu inte kan, tillsammans med andra som är mer kunniga. Eleven ”lånar kompetens” av sina kompisar och stöttas av lärare.", "correct": true},
+      {"text": "Eleven får använda olika redskap och utveckla färdigheter med fokus på vad som utgör en meningsfull aktivitet för dem själva. Läraren stöttar elevernas val av aktivitet.", "correct": false},
+      {"text": "Eleverna arbetar aktivt med språket i olika situationer för att lära sig hur man kan förstå samma problem på flera olika sätt. Särskilt viktigt blir för läraren att belysa kulturella skillnader i sådan förståelse.   ", "correct": false},
     ]
   },
   {
-    "question": "Vilka två av följande beteenden är ett exempel på ett klassiskt betingat beteende, enligt behavioristisk teori?",
+    "question": "Vilka två påståenden stämmer med Piagets teori om assimilation och ackommodation?",
+    "answers": [
+      {"text": "Ackommodation sker när ny information passar perfekt in i befintliga scheman.", "correct": false },
+      {"text": "Assimilation och ackommodation är två helt oberoende processer som inte samverkar.", "correct": false },
+      {"text": "Assimilation innebär att man anpassar sina tankemönster till ny information.", "correct": false },
+      {"text": "Ackommodation betyder att man ignorerar ny information som inte passar in.", "correct": false },
+      {"text": "Assimilation betyder att man tolkar ny information utifrån sina redan befintliga scheman.", "correct": false },
+      {"text": "Ackommodation innebär att man förändrar sina befintliga scheman för att passa ny kunskap.", "correct": false },
+    ]
+  },
+  {
+    "question": "10 Vilka två av följande beteenden är ett exempel på ett klassiskt betingat beteende, enligt behavioristisk teori?",
     "answers": [
       { "text": "En elev stannar kvar efter lektionen för att ställa frågor och förstå bättre.", "correct": false },
       { "text": "En elev räcker upp handen för att svara på en fråga för att få beröm av läraren.", "correct": false },
@@ -116,7 +125,7 @@ const q3 = [
     "plainInput": "internalisering"
   },
   {
-    "question": "Kunskaper, färdigheter eller erfarenheter som en individ har från ett område underlättar ofta lärandet inom ett annat område. Vilket begrepp beskriver ovanstående fenomen?",
+    "question": "Vilket begrepp beskriver ovanstående fenomen? (Kunskaper, färdigheter eller erfarenheter som en individ har från ett område underlättar ofta lärandet inom ett annat område)",
     "plainInput": "transfer"
   },
   {

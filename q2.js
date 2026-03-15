@@ -17,10 +17,10 @@ const q2 = [
     "question": "När man planerar sin undervisning enligt principen konstruktiv länkning utgår man först och främst ifrån ämnets",
     "answers": [
       { "text": "Metod", "correct": false },
-      { "text": "Mål", "correct": true },
+      { "text": "Mål", "correct": false },
       { "text": "Centrala innehåll", "correct": false },
       { "text": "Betygskriterier", "correct": false },
-      { "text": "Syfte", "correct": false },
+      { "text": "Syfte", "correct": true },
       { "text": "Redovisningsform", "correct": false }
     ]
   },
@@ -104,11 +104,11 @@ const q2 = [
   {
     "question": "Lindström och Pennlert beskriver en utvecklad didaktisk triangel. I den uttrycks fyra relationer. Vilka är de? (1 rätt svar)",
     "answers": [
-      { "text": "Relationen elev - pedagogik & Relationen lärare - elev & Relationen lärare - ämnesdidaktik & Relationen lärare - elev", "correct": false },
-      { "text": "Relationen elev - undervisningsinnehåll & Relationen lärare - elev och elev - elev & Relationen lärare - undervisningsinnehåll & Relationen lärare - elevens lärande", "correct": true },
-      { "text": "Relationen student - ämnesinnehåll & Relationen elev - elev & Relationen lärare - didaktik & Relationen lärare - elevens lärande", "correct": false },
-      { "text": "Relationen elev - innehåll & Relationen lärare - elev & Relationen lärare - undervisningsinnehåll & Relationen skolsystemet - elevens lärande", "correct": false },
-      { "text": "Relationen skolsystemet - undervisningsinnehåll & Relationen lärare elev och elev - elev & Relationen lärare - undervisningsinnehåll & Relationen undervisningsinnehåll - elevens lärande", "correct": false }
+      { "text": "Relationen elev - pedagogik <br> Relationen lärare - elev <br> Relationen lärare - ämnesdidaktik <br> Relationen lärare - elev", "correct": false },
+      { "text": "Relationen elev - undervisningsinnehåll <br> Relationen lärare - elev och elev - elev <br> Relationen lärare - undervisningsinnehåll <br> Relationen lärare - elevens lärande", "correct": true },
+      { "text": "Relationen student - ämnesinnehåll <br> Relationen elev - elev <br> Relationen lärare - didaktik <br> Relationen lärare - elevens lärande", "correct": false },
+      { "text": "Relationen elev - innehåll <br> Relationen lärare - elev <br> Relationen lärare - undervisningsinnehåll <br> Relationen skolsystemet - elevens lärande", "correct": false },
+      { "text": "Relationen skolsystemet - undervisningsinnehåll <br> Relationen lärare elev och elev - elev <br> Relationen lärare - undervisningsinnehåll <br> Relationen undervisningsinnehåll - elevens lärande", "correct": false }
     ]
   },
   {
@@ -190,18 +190,18 @@ const q2 = [
       { "text": "Reflektera över sig själv som social och pedagogisk ledare", "correct": false },
       { "text": "Formulera uppgifter som elever förstår", "correct": true },
       { "text": "Lärare kan se kopplingar mellan olika ämnesområden och integrera dessa i undervisnings- och lärandeprocesser", "correct": false },
-      { "text": "Utifrån egna reflekterade praktikerfarenheter, utveckla sitt arbete i samverkan med andra", "correct": false }
+      { "text": "Utifrån egna reflekterade praktikerfarenheter, utveckla sitt arbete i samverkan med andra", "correct": true }
     ],
     hiddenAmount: true
   },
   {
     "question": "Vilket eller vilka perspektiv på lärande passar in på följande påstående. \"Vårt tänkande och vår hjärna är inte en avgränsad del från den värld som vi agerar i, utan lärande sker i samspel med andra människor.\"",
     "answers": [
-      { "text": "Sociokulturellt perspektiv på lärande", "correct": false },
+      { "text": "Sociokulturellt perspektiv på lärande", "correct": true },
       { "text": "Behavioristiskt perspektiv på lärande", "correct": false },
       { "text": "Individualkonstruktivistiskt perspektiv på lärande", "correct": false },
       { "text": "Pragmatismens syn på lärande", "correct": true },
-      { "text": "Situerat perspektiv på lärande", "correct": false },
+      { "text": "Situerat perspektiv på lärande", "correct": true },
       { "text": "Positivistiskt perspektiv på lärande", "correct": false }
     ],
     hiddenAmount: true
@@ -227,7 +227,7 @@ const q2 = [
       { "text": "Arrangemang av lärmiljön så att eleven kan göra upptäckter på egen hand.", "correct": false },
       { "text": "Konkreta erfarenheter som möjliggör elevers egen konstruktion av kunskap.", "correct": false },
       { "text": "Hjälp med att dela upp en uppgift i flera steg eller frågor som guidar eleven i sitt tänkande.", "correct": true },
-      { "text": "Återkoppling som visar på både styrkor och utvecklingsområden, vilket hjälper eleven att förbättra sitt arbete.", "correct": false }
+      { "text": "Återkoppling som visar på både styrkor och utvecklingsområden, vilket hjälper eleven att förbättra sitt arbete.", "correct": true }
     ],
     hiddenAmount: true
   },
