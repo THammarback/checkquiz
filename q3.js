@@ -100,8 +100,8 @@ const q3 = [
       {"text": "Assimilation och ackommodation är två helt oberoende processer som inte samverkar.", "correct": false },
       {"text": "Assimilation innebär att man anpassar sina tankemönster till ny information.", "correct": false },
       {"text": "Ackommodation betyder att man ignorerar ny information som inte passar in.", "correct": false },
-      {"text": "Assimilation betyder att man tolkar ny information utifrån sina redan befintliga scheman.", "correct": false },
-      {"text": "Ackommodation innebär att man förändrar sina befintliga scheman för att passa ny kunskap.", "correct": false },
+      {"text": "Assimilation betyder att man tolkar ny information utifrån sina redan befintliga scheman.", "correct": true },
+      {"text": "Ackommodation innebär att man förändrar sina befintliga scheman för att passa ny kunskap.", "correct": true },
     ]
   },
   {
