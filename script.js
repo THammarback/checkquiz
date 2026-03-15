@@ -90,17 +90,16 @@ function checkAnswers() {
                 answerDivs[0].classList.add('wrong-answer');
             }
         } else {
-            const checkboxes = questionDiv.querySelectorAll('input[type="checkbox"]');
-            
-            checkboxes.forEach((cb, idx) => {
+            answerDivs.forEach((answerDiv) => {
+                const cb = answerDiv.querySelector('input[type="checkbox"]');
                 const isChecked = cb.checked;
-                const isActuallyCorrect = q.answers[idx].correct;
+                const isActuallyCorrect = answerDiv.dataset.correct === 'true';
 
                 if (isActuallyCorrect) {
-                    answerDivs[idx].classList.add('correct-answer');
+                    answerDiv.classList.add('correct-answer');
                 }
                 if (isChecked && !isActuallyCorrect) {
-                    answerDivs[idx].classList.add('wrong-answer');
+                    answerDiv.classList.add('wrong-answer');
                 }
                 if (isChecked !== isActuallyCorrect) {
                     isQuestionCorrect = false;
@@ -114,8 +113,8 @@ function checkAnswers() {
 
     document.getElementById('score').textContent = `${correctCount} / ${currentQuestions.length}`;
     document.getElementById('results').classList.add('show');
-}   
-
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
 window.onload = () => {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark-theme');
