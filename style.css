@@ -1,0 +1,216 @@
+:root {
+    /* Light Theme Variables */
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --question-bg: #f8f9fa;
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --correct: #10b981;
+    --correct-light: #d1fae5;
+    --incorrect: #ef4444;
+    --incorrect-light: #fee2e2;
+    --border: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme {
+    /* Dark Theme Variables */
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --question-bg: #334155;
+    --text-main: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --primary: #818cf8;
+    --primary-hover: #6366f1;
+    --correct: #34d399;
+    --correct-light: #064e3b;
+    --incorrect: #fb7185;
+    --incorrect-light: #4c0519;
+    --border: #475569;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Base Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+}
+
+.container {
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px var(--shadow);
+    transition: background 0.3s;
+}
+
+/* --- Quiz Components --- */
+.question {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--question-bg);
+    border-radius: 12px;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.question.correct {
+    background: var(--correct-light);
+    border-color: var(--correct);
+}
+
+.question.incorrect {
+    background: var(--incorrect-light);
+    border-color: var(--incorrect);
+}
+
+.question-header {
+    margin-bottom: 1.25rem;
+    padding-right: 2rem; /* Make room for the icon */
+}
+
+.question-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* --- Feedback Icons --- */
+.feedback-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    display: none;
+    font-weight: bold;
+}
+
+.question.correct .feedback-icon.check { display: block; color: var(--correct); }
+.question.incorrect .feedback-icon.cross { display: block; color: var(--incorrect); }
+
+/* --- Answers --- */
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+
+/* Specific Answer Feedback */
+.answer.correct-answer {
+    background: var(--correct-light) !important;
+    border-color: var(--correct);
+}
+
+.answer.wrong-answer {
+    background: var(--incorrect-light) !important;
+    border-color: var(--incorrect);
+}
+
+.answer input[type="checkbox"], 
+.answer input[type="text"] {
+    accent-color: var(--primary);
+}
+
+.answer input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text-main);
+}
+
+.answer label {
+    flex: 1;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* --- Indicators (Rätt/Fel text) --- */
+.answer-indicator {
+    display: none;
+    font-weight: 800;
+    margin-left: 8px;
+    font-size: 0.85rem;
+}
+
+.answer.correct-answer .correct-label { display: inline; color: var(--correct); }
+.answer.wrong-answer .wrong-label { display: inline; color: var(--incorrect); }
+
+/* --- Buttons --- */
+button {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--question-bg);
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: var(--border);
+}
+
+.check-button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.check-button:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* --- Results --- */
+.results {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--question-bg);
+    border-radius: 12px;
+    text-align: center;
+    display: none;
+}
+
+.results.show { display: block; }
+.score {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
